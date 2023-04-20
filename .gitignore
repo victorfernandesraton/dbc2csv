@@ -1,1 +1,7 @@
 __pycache__
+venv
+.pytest_cache
+bin
+dist
+build
+*.egg-info
