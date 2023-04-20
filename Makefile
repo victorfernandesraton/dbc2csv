@@ -19,7 +19,6 @@ build: ${WHEEL_TARGET}
 
 # install to local python environment
 install: ${WHEEL_TARGET}
-	python setup.py install
 	pip install -r requirements.txt
 
 # uninstall from local python environment
