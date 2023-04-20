@@ -8,53 +8,26 @@
 
 Para usar o `dbc2csv` é preciso ter os seguintes programas instalados na sua máquina:
 - git
-- [docker](https://store.docker.com/editions/community/docker-ce-server-ubuntu)
+- make
+- python
+
 
 Logo em seguinda execute os passos abaixo:
 
 ```bash
 $ git clone https://github.com/greatjapa/dbc2csv.git
 $ cd dbc2csv
-$ docker build -t dbc2csv .
+$ make all
 ```
 
 Ao final deste processo teremos uma imagem Docker com todos os programas utlizados na manipulação de arquivos `dbc`.
 
 ## Como converter?
 
-Crie uma pasta que contêm os arquivos `dbc` que deseja converter como no exemplo abaixo:
-```
-source/
-    file00.dbc
-    file01.dbc
-    file02.dbc
-    ...
-```
-
-Agora execute o comando abaixo passando o caminho completo para o diretório `source`.
-
+ainda dentro da pasta dbc2csv use o comando a seguir substituindo diretorio pelo caminho absoluto ou relativo ao diretorio atual
 ```bash
-$ docker run -it -v <caminho_completo_para_diretorio_source>:/usr/src/app/data dbc2csv make
+python main.py <diretorio>
 ```
-
-Ao final do processo, o diretório `source` será preenchido com arquivos `dbf` e `csv`:
-
-```
-source/
-    file00.dbc
-    file00.dbf
-    file01.dbc
-    file01.dbf
-    file02.dbc
-    file02.dbf
-    csv/
-        file00.csv
-        file01.csv
-        file02.csv
-        ...
-    ...
-```
-
 ## Agradecimentos
 
 - A [Prof. Rita Berardi](mailto:ritaberardi@utfpr.edu.br) pela atenção dedicada no desenvolvimento desta ferramenta.
@@ -66,6 +39,9 @@ source/
 
 * [Documentação oficial do SUS](http://cnes.datasus.gov.br/pages/downloads/documentacao.jsp), `http://CNES.DataSUS.gov.br`.
 
+# TD:LR
+
+este projeto é um fork preguiçoso e com recurso de diretorios recursivos que funciona aparentemente em linux apenas e mão usa o docker, sendo um fork do projeto https://github.com/greatjapa/dbc2csv
 
 
   
